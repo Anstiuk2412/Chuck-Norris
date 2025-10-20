@@ -73,6 +73,8 @@
   .favourites-panel.open {
     padding: var(--space-9);
     transform: translateX(0);
+    height: 100%;
+    overflow: auto;
   }
 
   .favourites-panel__close {
@@ -94,8 +96,6 @@
   .favourites-panel.open {
     padding: var(--space-6);
     transform: translateX(0);
-    height: 100%;
-    overflow: auto;
   }
 
   .favourites-panel {
