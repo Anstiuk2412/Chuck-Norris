@@ -120,6 +120,8 @@ font-size: 18px;
   align-items: center;
   justify-content: flex-end;
   gap: 4px;
+  width: min-content;
+  align-self: end;
 }
 
 .joke-card__favourite .icon {
