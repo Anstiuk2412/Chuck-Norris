@@ -1,0 +1,2 @@
+require('./tools/format.js');
+

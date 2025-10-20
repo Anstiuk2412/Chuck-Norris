@@ -1,0 +1,32 @@
+/* Page layout */
+.main-panel {
+  padding: var(--space-6);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Tablet layout */
+@media (min-width:768px) {
+  .main-panel {
+    padding: var(--space-9);
+  }
+
+}
+
+/* Desktop layout */
+@media (min-width:1200px) {
+  .main-panel {
+    padding: var(--space-9) 140px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    align-items: start;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+}

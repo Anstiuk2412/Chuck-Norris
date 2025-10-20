@@ -1,0 +1,57 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 78px 0 0;
+  line-height: 44px;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin: 0 0 43px;
+  font-weight: 500;
+  line-height: 44px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.fav-toggle {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+}
+
+.icon-circle {
+  display: inline-flex;
+  width: var(--icon-28);
+  height: var(--icon-28);
+  border-radius: 50%;
+  background: var(--text);
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle use {
+  pointer-events: none;
+}
+
+/* Hide toggle on desktop;
+visible on tablet/mobile */
+@media (min-width:1200px) {
+  .fav-toggle {
+    display: none;
+  }
+
+}

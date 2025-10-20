@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Find Chuck Norris jokes: random, by category, or search. Mark favourites and keep them saved in your browser." />
+    <title>Chuck Norris Jokes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Decomposed CSS -->
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/joke-card.css" />
+    <link rel="stylesheet" href="styles/favourites.css" />
+</head>
+
+<body>
+    <main class="layout">
+        <section class="main-panel" aria-labelledby="main-title">
+
+            <header class="app-header">
+                <div class="brand">MSI 2020</div>
+                <button id="toggle-favourites" class="fav-toggle" aria-expanded="false"
+                    aria-controls="favourites-panel">
+                    <svg class="icon-circle" aria-hidden="true">
+                        <use href="assets/icons/sprite.svg#Sandwich"></use>
+                    </svg>
+                    <span>Favourite</span>
+                </button>
+            </header>
+
+            <h1 id="main-title" class="title">Hey!</h1>
+            <p class="subtitle">Let's try to find a joke for you:</p>
+
+            <form id="controls" class="controls" autocomplete="off">
+                <fieldset class="mode">
+                    <legend class="sr-only">Mode</legend>
+                    <label class="radio">
+                        <input type="radio" name="mode" value="random" checked />
+                        <span>Random</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="mode" value="category"/>
+                        <span>From categories</span>
+                    </label>
+                    <div id="categories" class="categories hidden" aria-live="polite"></div>
+                    <label class="radio">
+                        <input type="radio" name="mode" value="search" />
+                        <span>Search</span>
+                    </label>
+                    <div id="search" class="search hidden">
+                        <input id="search-input" type="text" placeholder="Free text search..." maxlength="120" />
+                    </div>
+                </fieldset>
+
+                <div class="actions">
+                    <button id="get-joke" type="submit" class="primary">Get a joke</button>
+                </div>
+            </form>
+
+            <section id="results" class="results" aria-live="polite"></section>
+        </section>
+
+        <aside id="favourites-panel" class="favourites-panel" aria-labelledby="fav-title">
+            <div class="favourites-header">
+                <h2 id="fav-title">Favourite</h2>
+                <button id="close-favourites" class="favourites-panel__close" aria-label="Close favourites">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="assets/icons/sprite.svg#closeSandwich"></use>
+                    </svg>
+                </button>
+            </div>
+            <div id="favourites" class="favourites-list" aria-live="polite"></div>
+        </aside>
+    </main>
+
+    <div id="backdrop" class="backdrop hidden" aria-hidden="true"></div>
+
+    <template id="joke-card-template">
+        <article class="joke-card" data-joke-id="">
+            <div class="joke-card__container">
+                <button class="joke-card__favourite" aria-pressed="false" aria-label="Mark as favourite">
+                    <svg aria-hidden="true" class="icon"><use href="assets/icons/sprite.svg#emptyHeart"></use></svg>
+                </button>
+                <div class="joke-card__message-wrap">
+                    <div class="joke-card__message">
+                        <svg class="icon message" aria-hidden="true"><use href="assets/icons/sprite.svg#message"></use></svg>
+                    </div>
+                    <div class="joke-card__body">
+                        <div class="joke-card__meta">
+                            ID: 
+                            <a class="joke-card__link" href="#" target="_blank" rel="noopener">
+                                api.chucknorris.io 
+                                <svg class="icon link" aria-hidden="true"><use href="assets/icons/sprite.svg#link"></use></svg>
+                            </a>
+                        </div>
+                        <p class="joke-card__text"></p>
+                        <div class="joke-card__footer">
+                            <time class="joke-card__updated" datetime=""></time>
+                            <div class="joke-card__categories"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <script type="module" src="src/app.js"></script>
+</body>
+
+</html>

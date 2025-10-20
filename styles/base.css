@@ -1,0 +1,70 @@
+/* Base variables and resets */
+:root {
+  /* Colors */
+  --bg: #f9f9fb;
+  --card: #ffffff;
+  --surface-alt: #f8f8f8;
+  --muted: #ababab;
+  --text: #333333;
+  --accent-100: #8ea7ff;
+  --accent-200: #7291ff;
+  --primary: linear-gradient(90.55deg, var(--accent-100) 0%, var(--accent-200) 100%);
+  --border: #f0f0f0;
+  --heart: #eb5757;
+
+  /* Spacing scale */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --space-7: 24px;
+  --space-8: 28px;
+  --space-9: 40px;
+  --space-10: 48px;
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 20px;
+
+  /* Icon sizes */
+  --icon-28: 28px;
+  --icon-16: 16px;
+  --icon-20: 20px;
+
+  /* Shadows */
+  --shadow-soft: 0px 4px 6px 0px #0000001A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Roboto,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+  color: var(--text);
+}
+
+/* Ensure form controls inherit Roboto instead of browser defaults */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
