@@ -71,7 +71,7 @@
   }
 
   .favourites-panel.open {
-    padding: var(--space-6);
+    padding: var(--space-9);
     transform: translateX(0);
   }
 
@@ -91,6 +91,11 @@
 }
 
 @media (max-width:768px) {
+  .favourites-panel.open {
+    padding: var(--space-6);
+    transform: translateX(0);
+  }
+
   .favourites-panel {
     position: fixed;
     top: 0;
