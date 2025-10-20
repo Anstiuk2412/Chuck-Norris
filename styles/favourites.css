@@ -25,13 +25,9 @@
 }
 
 .favourites-panel__close {
-  background: var(--text);
+  background: none;
   border: 0;
-  border-radius: 999px;
-  width: var(--icon-28);
-  height: var(--icon-28);
-  display: none;
-  padding: 0;
+  gap: 10px;
 }
 
 .backdrop {
